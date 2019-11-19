@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=0,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="imgs/top.png" type="image/x-icon">
+    <title>WiFi Mouse</title>
+    <style>
+        body::-webkit-scrollbar{
+            display: none;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            /* border:1px solid red; */
+        }
+        .p6_img_box{
+            display: flex;
+            align-items: center;
+            
+        }
+        .p6_img_box img{
+            margin:0 auto;
+            display: block;
+        }
+        .m24{
+            width:70%;
+        }
+        .m25{
+            width:600px;
+        }
+        .m26{
+            width:920px;
+            margin:90px auto 0 auto;
+            line-height:30px;
+        }
+        .menu:active >div{
+            background:#333;
+        }
+        .m22 a{
+            height:100%;
+            display: block;
+        }
+        body{
+            overflow-x:hidden;
+        }
+        /* img{
+    image-rendering: pixelated
+} */
+        
+        [v-cloak] {
+            display: none;
+        }
+        
+        .m22 img {
+            width: 20px;
+            position: relative;
+            top: 3px;
+        }
+        
+        #player {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        .w1100 {
+            width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .txt {
+            font-size: 14px;
+        }
+        
+        header .txt.active {
+            color: #333;
+            line-height: 75px;
+            /* border-bottom:3px solid #263cc5; */
+            /* transition:border-bottom-color 0.5s; */
+            /* transform:scaleX(0); */
+            /* transition: border-bottom 0.5s ease; */
+        }
+        
+        header a .txt:after {
+            display: block;
+            content: "";
+            height: 3px;
+            background-color: #fff;
+            transition: all 0.5s;
+        }
+        
+        header a .txt.active:after {
+            display: block;
+            content: "";
+            height: 3px;
+            background-color: #263cc5;
+            /* transition: all 2s; */
+        }
+        /* header .nav ul li a:hover:after{
+    transform:scaleX(1);
+} */
+        
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .between {
+            justify-content: space-between;
+        }
+        
+        header {
+            height: 80px;
+        }
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            margin-top: 15px;
+            margin-right: 25px;
+        }
+        
+        header .txt {
+            margin-top: 3px;
+            line-height: 74px;
+            vertical-align: middle;
+        }
+        
+        header li.txt {
+            color: #9fabc3;
+        }
+        
+        header li {
+            /* padding: 0 15px; */
+            margin-right: 20px;
+        }
+        
+        header li span {
+            padding: 0 20px;
+        }
+        
+        header li:last-child {
+            margin-right: 0;
+        }
+        
+        header {
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #fff;
+            width: 100%;
+            z-index: 500;
+        }
+        
+        .p1 {
+            /* height:946px; */
+            background: url("imgs/def0634c095c8fadae97da6a69850f7.png") no-repeat right top;
+            padding-top: 79px;
+            background-size: 30%;
+        }
+        
+        .m12 {
+            padding-bottom: 350px;
+            /* padding-bottom:230px; */
+        }
+        
+        .greytxt {
+            font-size: 20px;
+            color: #9fabc3;
+        }
+        
+        .bigtxt {
+            font-size: 40px;
+            color: #424b62;
+            font-weight: 400;
+        }
+        
+        .m1 {
+            margin-top: 190px;
+            margin-bottom: 50px;
+        }
+        
+        .m2 {
+            font-size: 16px;
+            color: #9fabc3;
+            margin-top: 35px;
+            margin-bottom: 40px;
+            line-height: 32px;
+        }
+        
+        .m3 {
+            width: 35px;
+            height: 4px;
+            background: #2a44de;
+            margin-bottom: 50px;
+        }
+        
+        .m4 {
+            margin-right: 35px;
+        }
+        
+        .p2 {
+            padding-bottom: 668px;
+            overflow: hidden;
+            /* height:1076px; */
+            background: url('imgs/aaab00f657fbd5f042a27e794353560.png') no-repeat left 20px bottom 230px;
+            background-size: 50%;
+        }
+        
+        .m5 {
+            padding-top: 15px;
+            width: 590px;
+            float: right;
+            background: url("imgs/mode-1-02.png") no-repeat 300px 0px;
+        }
+        
+        .p3 {
+            padding-bottom: 230px;
+            /* height:1420px; */
+            background: url('imgs/mode-2-08.png') no-repeat top right;
+            background-size: 42%;
+        }
+        
+        .imgList {
+            margin-bottom: 55px;
+        }
+        
+        .imgList .imgItem {
+            margin-right: 50px;
+            font-size: 14px;
+            color: #9fabc3;
+        }
+        
+        .imgItem img {
+            width:40px;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 15px;
+        }
+        
+        .p4 {
+            /* height:2170px; */
+            background: #f7f8fc;
+            position: relative;
+        }
+        
+        .p4-top {
+            position: absolute;
+            top: -36px;
+            left: 50%;
+            margin-left: -107px;
+        }
+        
+        .p4-bot {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            margin-left: -107px;
+        }
+        
+        .stepList {
+            padding-top: 150px;
+        }
+        
+        .num {
+            margin-right: 35px;
+        }
+        
+        .step {
+            font-size: 24px;
+            color: #424b62;
+        }
+        
+        .m6 {
+            margin-top: 25px;
+            margin-bottom: 60px;
+        }
+        
+        .stepItem {
+            margin-bottom: 120px;
+        }
+        
+        .imgBox {
+            width: 32px;
+            height: 32px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .p5-left {
+            flex-shrink: 0;
+            width: 338px;
+            border-right: 1px solid #cccccc;
+            text-align: center;
+            font-size: 30px;
+            color: #424b62;
+            min-height: 380px;
+            padding-top: 70px;
+        }
+        
+        .m7 {
+            padding: 100px 0;
+        }
+        
+        .p5 {
+            min-height: 380px;
+        }
+        
+        .p5-left img {
+            padding: 50px 0;
+        }
+        
+        .m8 {
+            font-size: 18px;
+            color: #333;
+            margin-top: 57px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+        
+        .comment {
+            font-size: 14px;
+            color: #333;
+            line-height: 32px;
+        }
+        
+        .p5-right {
+            padding-left: 110px;
+            position: relative;
+            margin-right: 100px;
+        }
+        
+        .btnGroup {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+        }
+        
+        .btnGroup .imgBox:first-child {
+            margin-right: 32px;
+        }
+        
+        .p6 {
+            /* height:433px; */
+            padding-bottom: 80px;
+            background: #f7f7f7;
+        }
+        
+        .p6_box {
+            width: 920px;
+            margin: 0 auto;
+            font-size: 30px;
+            color: #424b62;
+        }
+        
+        .m9 {
+            text-align: center;
+            padding: 80px 0 65px 0;
+        }
+        
+        .p6_img_box {
+            width: 220px;
+            height: 138px;
+            background: #fff;
+        }
+        
+        .p7 {
+            background: #272a2f;
+            padding-bottom: 20px;
+            /* height:255px; */
+        }
+        
+        .p7_box {
+            /* width: 920px; */
+            width:1100px;
+            margin: 0 auto;
+            color: #fff;
+        }
+        
+        .w460 {
+            width: 460px;
+        }
+        
+        .m10 {
+            font-size: 20px;
+            padding-top: 55px;
+            padding-left: 25px;
+            margin-bottom: 37px;
+        }
+        
+        .p7_one {
+            margin-bottom: 12px;
+            font-size: 12px;
+            padding-left: 25px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .p7_one img {
+            margin-right: 17px;
+        }
+        
+        .m11 {
+            font-size: 16px;
+            margin-bottom: 28px;
+        }
+        
+        .m11:first-child {
+            padding-top: 55px;
+        }
+        .m11 a{
+            color:#fff;
+        }
+        .m11{
+            padding-left:6%;
+        }
+        
+        
+        .p8 {
+            font-size: 12px;
+            background: #131517;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .m5 .greytxt {
+            margin-bottom: 28px;
+        }
+        
+        .p3 .greytxt {
+            margin-bottom: 40px;
+        }
+        
+        .p3 .w1100 {
+            background: url("imgs/mode-2-01.png") no-repeat 242px 30px;
+        }
+        
+        .menu,
+        .m13,
+        .m14,
+        .m16 {
+            display: none;
+        }
+        
+        .imgList .imgItem:last-child {
+            margin-right: 0;
+        }
+        
+        .m18 {
+            margin-bottom: 210px;
+        }
+        
+        #animation1,
+        .imgList {
+            visibility: hidden;
+            animation-name: none;
+        }
+        
+        #num,
+        #num2,
+        #num3 {
+            visibility: hidden;
+            animation-name: none;
+        }
+        
+        .elastic {
+            background: rgba(0, 0, 0, 0.4);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            visibility: hidden;
+        }
+        
+        .close {
+            width: 40px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        
+        #frame {
+            margin: 0 auto;
+        }
+        
+        .watch {
+            cursor: pointer;
+        }
+        
+        .step_img {
+            position: relative;
+            /* overflow-x: hidden;
+            overflow-y:auto; */
+        }
+        
+        .qr {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url("imgs/5ec8028209dc6977cf20de1618b5672.png") no-repeat;
+            background-size: 100%;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+        }
+        
+        .qr img {
+            display: block;
+            width: 100px;
+            margin: 0 auto;
+            margin-top: 40px;
+            margin-bottom: 6px;
+        }
+        
+        .qr1 {
+            top: 44px;
+        }
+        
+        .qr2 {
+            top: 44px;
+            left: 216px;
+        }
+        
+        .qr3 {
+            top: 115px;
+        }
+        
+        .step_img img:hover+.qr1 {
+            display: block;
+        }
+        
+        .step_img img:nth-child(2):hover+.qr2 {
+            display: block;
+        }
+        
+        .step_img img:last-child:hover+.qr3 {
+            display: block;
+        }
+        
+        .m20 {
+            background: linear-gradient(to right, #2a44de, #1a2585);
+            color: #fff;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 25px;
+            padding: 0 25px;
+        }
+        
+        .m20 img {
+            /* margin-left:23px; */
+            margin-right: 14px;
+        }
+        
+        /* .m20:first-child {
+            margin-right: 35px;
+        } */
+        
+        .download_img {
+            width: 19px;
+            height: 19px;
+            position: relative;
+            top: 16px;
+        }
+        
+        .watch_img {
+            width: 22px;
+            height: 22px;
+            position: relative;
+            top: 14px;
+        }
+        
+        .m21 {
+            background: #fff;
+            height: 50px;
+            width: 150px;
+            border-radius: 25px;
+            line-height: 50px;
+            margin-bottom: 20px;
+            align-items: center;
+            margin-right: 25px;
+            cursor: pointer;
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .m21 img {
+            position: absolute;
+            left: 25px;
+        }
+        
+        .m21 span {
+            margin: 0 auto;
+        }
+        
+        .row2 {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .m22 {
+            height: 50px;
+            line-height: 50px;
+            width: 200px;
+            background: #fff;
+            border-radius: 25px;
+            margin-right: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .m22 span {
+            margin-left: 35px;
+            display: inline-block;
+            width: 115px;
+        }
+        
+        .m19 {
+            width: 90%;
+        }
+        
+        .num span {
+            display: block;
+            width: 54px;
+            height: 54px;
+            color: #fff;
+            background: #2132ab;
+            border-radius: 27px;
+            line-height: 54px;
+            text-align: center;
+            font-size: 22px;
+        }
+        
+        .m17 img {
+            width: 544px;
+        }
+        
+        .m23 {
+            width: 500px;
+        }
+        .m12 a{
+                margin-right:35px;
+            }
+        @media screen and (max-width:1600px){
+            .p1{
+                background-size:50%;
+            }
+            .p2{
+                background-size:80%;
+                padding-bottom:600px;
+            }
+            /* .m12{
+                padding-bottom:230px;
+            }
+            .p2{
+                padding-bottom:520px;
+            } */
+        }
+
+        @media screen and (max-width:1200px){
+            .m12{
+                padding-bottom:230px;
+            }
+            .p2{
+                padding-bottom:520px;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            .m26{
+                padding:0 6%;
+                width:88%;
+            }
+            .step_img2 .row{
+                justify-content: space-between;
+            }
+            .step_img2 .m22{
+                margin-right:0;
+            }
+            .m12 a{
+                margin-right:35px;
+            }
+            .m11{
+                padding-left:25px;
+            }
+            .m11:first-child{
+                padding-top:0;
+            }
+            .p7_box{
+                padding:0 6%;
+                width:88%;
+                line-height:20px;
+            }
+            .m25{
+                width:100%;
+            }
+            .p7_box .w460{
+                width:100%;
+                margin-bottom:50px;
+            }
+            .num span {
+                margin: 0 auto;
+            }
+            .m22 {
+                height: 50px;
+                line-height: 50px;
+                width: 150px;
+                background: #fff;
+                border-radius: 25px;
+                margin-right: 20px;
+                margin-bottom: 25px;
+                font-size: 12px;
+            }
+            .m22 span {
+                margin-left: 25px;
+                display: inline-block;
+                width: 85px;
+            }
+            .row2 {
+                display: block;
+            }
+            .m21 {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            header {
+                width: 88%;
+                height: 80px;
+                padding: 0 6%;
+            }
+            .w1100 {
+                width: 100%;
+            }
+            nav {
+                display: none;
+            }
+            .logo {
+                margin-top: 16px;
+                margin-right: 20px;
+            }
+            header .txt {
+                line-height: 80px;
+            }
+            .menu {
+                display: block;
+                margin-top: 30px;
+            }
+            .menu div {
+                width: 26px;
+                height: 3px;
+                background: #666;
+            }
+            .menu div {
+                margin-bottom: 7px;
+            }
+            .p1 {
+                background: none;
+            }
+            .m1 {
+                margin-top: 100px;
+                margin-bottom: 26px;
+            }
+            .p1 .w1100 {
+                width: 88%;
+                padding: 0 6%;
+            }
+            .bigtxt {
+                font-size: 24px;
+                font-weight: bold;
+            }
+            .m2 {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            .m3 {
+                margin-bottom: 28px;
+            }
+            /* .m12 img{
+        width:35%;
+    } */
+            .m4 {
+                margin-right: 25px;
+            }
+            .m12 {
+                padding-bottom: 0;
+            }
+            
+            .m13 {
+                display: block;
+                overflow: hidden;
+            }
+            .m13 img {
+                width:140%;
+                position:relative;
+                left:30px;
+                padding-left: 6%;
+                /* width: 94%; */
+            }
+            .p2 {
+                background: none;
+                margin-top: 120px;
+                padding-bottom: 160px;
+            }
+            .m5 {
+                padding: 0 6%;
+                width: 88%;
+                background-size: 18%;
+                background-position-x: 225px;
+                background-position-y: 27px;
+            }
+            .m14 {
+                display: block;
+                padding: 0 6%;
+                width: 88%;
+            }
+            .m14 img {
+                width: 100%;
+            }
+            .p3 {
+                background: none;
+                padding-bottom: 130px;
+            }
+            .p3 .w1100 {
+                padding: 0 6%;
+                width: 88%;
+                background-size: 20%;
+                background-position-x: 179px;
+            }
+            .m15 {
+                padding: 0 6%;
+                width: 88%;
+            }
+            .m16 {
+                display: block;
+                padding-left: 6%;
+                width: 94%;
+                margin-top: 110px;
+            }
+            .imgList .imgItem {
+                width: 16%;
+                margin-right: 5%;
+            }
+            .imgItem div {
+                font-size: 8px;
+                text-align: center;
+            }
+            .imgItem img {
+                width: 24px;
+            }
+            .p4-top {
+                /* width:50px; */
+                /* top:-100%; */
+            }
+            .p4 .w1100 {
+                padding: 100px 6% 0;
+                width: 88%;
+            }
+            .p4 .bigtxt {
+                text-align: center;
+            }
+            .m2 {
+                /* text-align: center; */
+            }
+            .stepList .row {
+                flex-direction: column;
+            }
+            .stepList .num {
+                margin-right: 0;
+                margin-top: 20px;
+                margin-bottom: 40px;
+            }
+            .num img {
+                display: block;
+                margin: 0 auto;
+            }
+            .step {
+                text-align: center;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .m17 img {
+                /* padding:0 6%; */
+                width: 100%;
+            }
+            .stepItem {
+                margin-bottom: 20px;
+            }
+            .m19 {
+                margin-top: 30px;
+                width: 120%;
+                margin-left: -20%;
+            }
+            .m18 {
+                margin-bottom: 100px;
+            }
+            .step_img .row {
+                flex-direction: row;
+            }
+            .step_img:first .row img {
+                width: 40%;
+            }
+            .p5>.row {
+                flex-direction: column;
+            }
+            .p5-left {
+                border: none;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: row;
+                font-size: 20px;
+                justify-content: space-between;
+                line-height: 30px;
+                min-height: 0;
+                padding-top: 0;
+            }
+            .p5-left img {
+                padding: 0;
+                display: block;
+                height: 30px;
+                position: relative;
+                top: -3px;
+                left: 9px;
+            }
+            .p5-right {
+                padding: 0 10%;
+                margin-right: 0;
+            }
+            .btnGroup {
+                position: static;
+                margin-top: 40px;
+                justify-content: flex-end;
+            }
+            .p6_box {
+                width: 100%;
+            }
+            /* .p7 {
+                display: none;
+            } */
+            .p7_box.row{
+                flex-direction: column;
+            }
+            .m9 {
+                font-size: 24px;
+                padding: 60px 0 45px 0;
+            }
+            .p6 {
+                padding-bottom: 50px;
+            }
+            .active2 {
+                color: #263cc5;
+                font-weight: bolder;
+            }
+            .nav {
+                position: fixed;
+                height: 100%;
+                top: 100px;
+                background: #fff;
+                width: 100%;
+                z-index: 300;
+                opacity: 1;
+                transition: opacity 2s;
+            }
+            .nav li {
+                padding-left: 6%;
+                line-height: 60px;
+                border-bottom: 1px solid #eee;
+            }
+            .close {
+                top: 80px;
+            }
+            .qr {
+                left: 50%;
+                margin-left: -100px;
+            }
+            .qr1 {
+                top: 44px;
+            }
+            .qr2 {
+                top: 112px;
+            }
+            .qr3 {
+                top: 180px;
+            }
+            @keyframes left {
+                0% {
+                    position: relative;
+                    left: 0px;
+                    top: 20px;
+                    opacity: 0;
+                }
+                100% {
+                    position: relative;
+                    left: 0;
+                    top: 0;
+                    opacity: 1;
+                }
+            }
+            /* .m12 img{
+        width:130px;
+        height:35px;
+    } */
+            /* .m12 a img{
+        width:115px;
+    } */
+            .m20 {
+                font-size: 12px;
+                padding: 0 10px;
+                height: 40px;
+                line-height: 40px;
+                border-radius: 20px;
+            }
+            .download_img {
+                position: relative;
+                top: 11px;
+            }
+            .watch_img {
+                position: relative;
+                top: 9px;
+            }
+            .m20 img {
+                margin-right: 7px;
+            }
+        }
+        
+        @keyframes rotateIn {
+            0% {
+                -webkit-transform-origin: center;
+                transform-origin: center;
+                -webkit-transform: rotate3d(0, 0, 1, -100deg);
+                transform: rotate3d(0, 0, 1, -100deg);
+                opacity: 0
+            }
+            100% {
+                -webkit-transform-origin: center;
+                transform-origin: center;
+                -webkit-transform: none;
+                transform: none;
+                opacity: 1
+            }
+        }
+        
+        @keyframes show {
+            0% {
+                position: relative;
+                top: 20px;
+                opacity: 0;
+            }
+            100% {
+                position: relative;
+                top: 0;
+                opacity: 1;
+            }
+        }
+        
+        @keyframes cc {
+            0% {}
+        }
+        
+        @keyframes bounce {
+            0%,
+            100%,
+            20%,
+            53%,
+            80% {
+                -webkit-transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+                transition-timing-function: cubic-bezier(0.215, .61, .355, 1);
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0)
+            }
+            40%,
+            43% {
+                -webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+                transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+                -webkit-transform: translate3d(0, -30px, 0);
+                transform: translate3d(0, -30px, 0)
+            }
+            70% {
+                -webkit-transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+                transition-timing-function: cubic-bezier(0.755, .050, .855, .060);
+                -webkit-transform: translate3d(0, -15px, 0);
+                transform: translate3d(0, -15px, 0)
+            }
+            90% {
+                -webkit-transform: translate3d(0, -4px, 0);
+                transform: translate3d(0, -4px, 0)
+            }
+        }
+        
+        @keyframes left {
+            0% {
+                position: relative;
+                left: -30px;
+                opacity: 0;
+            }
+            100% {
+                position: relative;
+                left: 0;
+                opacity: 1;
+            }
+        }
+        
+        @keyframes open {
+            0% {
+                width: 0px;   
+                opacity: 0;
+            }
+            100% {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="css/index.css"> -->
+</head>
+
+<body>
+    <div id="body" v-cloak>
+        <div class="elastic" id="elastic" @click="close">
+            <!-- <img src="imgs/close.png" alt="" class="close" @click="close"> -->
+            <div id="player"></div>
+            <!-- <video  width="80%" height="80%" controls="control" src="https://www.youtube.com/embed/FtkR0rIo6Lo"></video> -->
+            <!-- <iframe id="frame"  width="80%" height="80%" src="https://www.youtube.com/embed/FtkR0rIo6Lo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+        </div>
+        <header>
+            <div class="w1100 row between">
+                <div class="row">
+                    <img class="logo" src="imgs/top.png" alt="">
+                    <div class="txt">WiFi Mouse</div>
+                </div>
+                <nav>
+                    <ul class="row">
+                        <a href="#feature" @click="active=1">
+                            <li :class="active==1?'active':''" class="txt"><span>Features</span></li>
+                        </a>
+                        <a href="#download" @click="active=2">
+                            <li class="txt" :class="active==2?'active':''"><span>Download</span></li>
+                        </a>
+                        <a href="#help" @click="active=3">
+                            <li class="txt" :class="active==3?'active':''"><span>Contact</span></li>
+                        </a>
+                    </ul>
+                </nav>
+                <div class="menu" @click="showMenu">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+            </div>
+
+        </header>
+        <div class="nav" v-if="menuShow">
+            <ul>
+                <a href="#feature" @click="active=1;dieMenu()">
+                    <li :class="active==1?'active2':''" class="txt">Features</li>
+                </a>
+                <a href="#download" @click="active=2;dieMenu()">
+                    <li class="txt" :class="active==2?'active2':''">Download</li>
+                </a>
+                <a href="#help" @click="active=3;dieMenu()">
+                    <li class="txt" :class="active==3?'active2':''">Contact</li>
+                </a>
+            </ul>
+        </div>
+        <div class="p1" id="feature">
+            <div class="w1100" id="animation1">
+                <!-- <p class="greytxt m1">What's WiFi Mouse?</p> -->
+                <p class="bigtxt" style="margin-top:100px;">The easiest way to control<br/> your computer.</p>
+                <p class="m2">Transform your phone into a wireless mouse, keyboard, remote desktop,<br>trackpad and more. Download this app for iOS and Andriod.</p>
+                <div class="m3"></div>
+                <div class="m12 row">
+                    <a href="#download">
+                        <div class="m20 row">
+                            <img src="imgs/download.png" class="download_img" alt="">
+                            <span>DOWNLOAD</span>
+                        </div>
+                    </a>
+                    <div @click="watch" class="watch m20 row">
+                        <img src="imgs/play.png" class="watch_img" alt="">
+                        <span>WATCH VIDEO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m13">
+                <img src="imgs/def0634c095c8fadae97da6a69850f7.png" alt="">
+            </div>
+        </div>
+        <div class="p2">
+            <div class="w1100">
+                <div class="m5">
+                    <p class="greytxt">Why use WiFi Mouse?</p>
+                    <p class="bigtxt">Convinence input.</p>
+                    <div class="m2">
+                        <p>> Simulates mouse-click, touchpad gesture control, cursor movement, drag-and-drop, text selection etc.</p>
+                        <p>> Full QWERTY keyboard with key-combination support e.g. ALT+Fn and CTRL+C etc.</p>
+                        <p>> Supports Voice-To-Text conversion and immediate display of transcribed text on your computer</p>  
+                    </div>
+
+                </div>
+                <div class="m14">
+                    <img src="imgs/9ebb11ee92b3c699bc33b032b4d2ef6.png" alt="">
+                </div>
+
+            </div>
+
+        </div>
+        <div class="p3">
+            <div class="w1100">
+                <div class="m25">
+                        <p class="greytxt">Why use WiFi Mouse?</p>
+                        <p class="bigtxt">Easy to control.</p>
+                        <div class="m2">
+                            <p>> Remote desktop logon with full control.</p>
+                            <p>> Quick control for 3rd party applications such as VLC®, Spotify®, YouTube®(web), Netflix®(web), PPT presentation and browsers.</p>
+                            <p>> Game-mode feature with joystick simulation, enables simple control e.g. flying, jumping and shooting action in PC based games.</p>
+                            <p>> Power off your PC from your bedroom</p>
+                        </div>
+                        <div class="row imgList between" id="animation2">
+                            <div class="imgItem">
+                                <img src="imgs/mode-2-02.png" alt="">
+                                <div>Remote desktop</div>
+                            </div>
+                            <div class="imgItem">
+                                <img src="imgs/mode-2-03.png" alt="">
+                                <div>Player</div>
+                            </div>
+                            <div class="imgItem">
+                                <img src="imgs/mode-2-04.png" alt="">
+                                <div>Game</div>
+                            </div>
+                            <div class="imgItem">
+                                <img src="imgs/mode-2-05.png" alt="">
+                                <div>Presentation</div>
+                            </div>
+                            <div class="imgItem">
+                                <img src="imgs/mode-2-06.png" alt="">
+                                <div>Web browser</div>
+                            </div>
+                        </div>
+                        <div class="m3"></div>
+                        <img src="imgs/mode-2-07.png" class="m15 m24" alt="">
+                </div>
+                
+
+            </div>
+            <img src="imgs/mode-2-08.png" class="m16" alt="">
+
+        </div>
+        <div class="p4" id="download"   @click="app1 = false;app2 =false;app3 = false;">
+            <img class="p4-top" src="imgs/mode-top.png" alt="">
+            <img class="p4-bot" src="imgs/mode-bottom.png" alt="">
+            <div class="w1100 stepList" id="animation3">
+                <div>
+                    <p class="bigtxt" style="margin-bottom:60px;">Installation steps</p>
+                    <!-- <p class="m2">To have WiFi Mouse, you only need three steps to enjoy its magical functions.</p> -->
+                </div>
+                <div class="row between stepItem">
+                    <!-- @click="app1 = false;app2 =false;app3 = false;" -->
+                    <div>
+                        <div class="row">
+                            <div class="num">
+                                <span id="num">01</span>
+                                <!-- <img id="num" src="imgs/mode-3-01.png" alt="" id="an3_img"> -->
+                            </div>
+                            <div>
+                                <p class="step" style="margin-bottom:60px;">Download WiFi Mouse App.</p>
+                                <!-- <p class="m2 m6">Choose a download plan for your device</p> -->
+                                <div class="step_img">
+                                    <div class="row2">
+                                        <div class="m21 row" @click="clickapp1">
+                                            <img style="width:24px;height:24px;" src="imgs/andriod.png" alt="">
+                                            <span>Andriod</span>
+                                        </div>
+                                        <div class="m21 row" @click="clickapp2">
+                                            <img style="width:20px; height:20px;" src="imgs/iphone.png" alt="">
+                                            <span>iPhone</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="m21 row" @click="clickapp3">
+                                        <img style="width:20px;height:20px;" src="imgs/ipad.png" alt="">
+                                        <span>iPad</span>
+                                    </div>
+                                    <div class="qr qr1" v-if="app1">
+                                        <img src="imgs/1.png" alt="">
+                                        <div style="font-size:12px;">QR code</div>
+                                    </div>
+                                    <div class="qr qr2" v-if="app2">
+                                        <img src="imgs/2.png" alt="">
+                                        <div style="font-size:12px;">QR code</div>
+                                    </div>
+                                    <div class="qr qr3" v-if="app3">
+                                        <img src="imgs/3.png" alt="">
+                                        <div style="font-size:12px;">QR code</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m17">
+                        <img src="imgs/3a584bf1ae3aa1a2014590706aef074.png" alt="">
+                    </div>
+
+                </div>
+                <div class="row between stepItem" id="animation4">
+                    <div>
+                        <div class="row">
+                            <div class="num">
+                                <span id="num2">02</span>
+                            </div>
+                            <div>
+                                <p class="step">Install mouse server on your computer.</p>
+                                <p class="m2 m6">After software installation, run Mouse Server with administrator right on Windows® based operating system.</p>
+                                <div class="step_img  step_img2">
+                                    <div class="row">
+                                            
+                                            <div class="m22">
+                                                <a href="apk/MouseServer.exe">   
+                                                    <span>Windows</span>
+                                                    <img src="imgs/download2.png" alt="">
+                                                </a>
+                                            
+                                            </div>
+                                        
+                                            <!-- <img style="width:90%;" src="imgs/pcdown-01-button.png" alt=""> -->
+                                        
+                                        
+                                            <div class="m22">
+                                                    <a href="apk/MouseServer.pkg">
+                                                <span>Mac</span>
+                                                <img src="imgs/download2.png" alt="">
+                                            </a>
+
+                                            </div>
+                                            <!-- <img style="width:90%;" src="imgs/pcdown-02-button.png" alt=""> -->
+                                       
+                                    </div>
+                                    <div class="row">
+                                        
+                                            <div class="m22">
+                                                <a href="apk/MouseServerLinux32.zip">
+                                                    <span>Ubuntu 32bit</span>
+                                                    <img src="imgs/download2.png" alt="">
+                                                </a>
+                                            </div>
+                                            <!-- <img style="width:90%;" src="imgs/pcdown-03-button.png" alt=""> -->
+                                        
+                                        
+                                            <div class="m22">
+                                                <a href="apk/MouseServerLinux64.zip">
+                                                    <span>Ubuntu 64bit</span>
+                                                    <img src="imgs/download2.png" alt="">
+                                                </a>
+                                            </div>
+                                            <!-- <img style="width:90%;" src="imgs/pcdown-04-button.png" alt=""> -->
+                                        
+
+                                    </div>
+                                    <div class="row">
+                                        
+                                            <div class="m22">
+                                                <a href="apk/MouseServer32.rpm">
+                                                    <span>Fodora 64bit</span>
+                                                    <img src="imgs/download2.png" alt="">
+                                                </a>
+                                            </div>
+                                            <!-- <img style="width:90%;" src="imgs/pcdown-05-button.png" alt=""> -->
+                                       
+                                        
+                                            <div class="m22">
+                                                <a href="apk/MouseServer64.rpm">
+                                                    <span>Fodora 64bit</span>
+                                                    <img src="imgs/download2.png" alt="">
+                                                </a>
+                                            </div>
+                                            <!-- <img style="width:90%;" src="imgs/pcdown-06-button.png" alt=""> -->
+                                        
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img class="m15 m23" src="imgs/117042498db2ef2b24af638fe3cd6e8.png" alt="">
+                    </div>
+
+                </div>
+                <div id="animation5">
+                    <div>
+                        <div class="row">
+                            <div class="num">
+                                <span id="num3">03</span>
+                            </div>
+                            <div>
+                                <p class="step">Connect to the same network.</p>
+                                <p class="m2 m6">Make sure your smartphone and computer are connected to the same network, e.g same WiFi AP.</p>
+                                <div class="m18">
+                                    <img class="m19" src="imgs/cb0bfc03aa5dc37fb518669bbc7b2c0.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="p5">
+            <div class="w1100 row m7">
+                <div class="p5-left">
+                    <div>How users</div>
+                    <img src="imgs/mode-4-01.png" alt="">
+                    <div>WiFi Mouse?</div>
+                </div>
+                <div class="p5-right">
+                    <div class="sliderBox">
+                        <div class="bd">
+                            <ul>
+                                <li>
+                                    <p class="m8">Diamond Phoenix</p>
+                                    <p class="comment">It's such a good app to use if you forgot were your mouse is or you dont have one yet and it also works as a keyboard you also can buy other in app purchases. Great app.</p>
+
+                                </li>
+                                <li>
+                                    <p class="m8">Sr Bielzynho</p>
+                                    <p class="comment">Muito bom agr que tenho outro comoutador eu tenho 3 computador e 1 pc agr posso controlar com o cll fasinho sem fica mechendo de mais na tecla do Computador (Amei) o app.</p>
+
+                                </li>
+                                <li>
+                                    <p  class="m8">john campbell</p>
+                                    <p  class="comment">Works very well. Though some of the features require payment to use them, the most vital ones are free to use (mouse pad, keyboard). if you pay you get access to a few other things including (keyboard with system commands eg.Ctrl+Alt+Del ect, and a Controller with a Dpad and 4 action buttons) I am very impressed with how easy this is to use and It takes very little time to set up. thank you for the app!</p>
+                                </li>
+                                <li>
+                                    <p class="m8">PIHHA</p>
+                                    <div class="comment">最高。音量操作とスクリーンショットが地味に嬉しい。 ドラッグは画面下のキーを押しながら画面で操作するか、3本の指で同時押しすると出来ます。 </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="row btnGroup">
+                            <div class="imgBox prev">
+                                <img src="imgs/mode-4-02.png" alt="">
+                            </div>
+                            <div class="imgBox next">
+                                <img src="imgs/mode-4-03.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="p6">
+            <div class="p6_box">
+                <p class="m9">As seen on</p>
+                <div class="row between">
+                    <div class="p6_img_box">
+                        <img src="imgs/ah-logo.png" alt="">
+                    </div>
+                    <div class="p6_img_box">
+                        <img src="imgs/ec59c49c959f3a9e1ab7d4c22a26f9d.png" alt="">
+                    </div>
+                    <div class="p6_img_box">
+                        <img src="imgs/cnet.png" alt="">
+                    </div>
+                    <div class="p6_img_box">
+                        <img src="imgs/367b5b5211bb036a0f6399d19319285.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="m26"  style="color:#888;">
+                    Your use of Mouse server is free of charge in exchange for safely using some of your device's resources (WiFi and very limited cellular data), and only when you are not using your device. You may turn this off from the settings menu. Please visit our <a style="color:blue;" href="http://www.necta.us/MouseServerPrivacy.htm">TOS</a> for further information.
+            </div>
+        </div>
+        <div class="p7"  id="help">
+            <div class="p7_box row">
+                <div class="w460">
+                    <p class="m10">Contact us</p>
+                    <div class="p7_one row">
+                        <img style="width:15px;height:14px;" src="imgs/mode-5-01.png" alt="">
+                        <div>Shigu road 5-303,Nanshan district, shenzhen, China</div>
+                        <!-- <span>Shigu road 5-303,Nanshan district, shenzhen, China</span> -->
+                    </div>
+                    <!-- <div  class="p7_one">
+                <img src="imgs/mode-5-02.png" alt="">
+                <span>+86 13828717976</span>
+            </div> -->
+                <a href="mailto:wangshimeng@gmail.com" style="color:#fff;">
+                    <div class="p7_one">
+                        <img src="imgs/mode-5-03.png" alt="">
+                        <span>wangshimeng@gmail.com</span>
+                    </div>
+                </a>
+                    <div class="p7_one">
+                        <img src="imgs/mode-5-04.png" alt="">
+                        <span>wifimouse.necta.us</span>
+                    </div>
+                </div>
+                <div style="width:260px">
+                    <p class="m11"><a target="_blank" href="http://www.necta.online/remote/help/faq.html">FAQ</a></p>
+                    <p class="m11"><a target="_blank" href="https://fb.com/wifimouse">Facebook</a></p>
+                    
+                </div>
+                <div style="width:320px">
+                    <p class="m11"><a target="_blank" href="http://www.necta.online/remote/policy/WiFiMousePrivacy.htm">Privacy Policy</a></p>
+                    <p class="m11"><a target="_blank" href="https://wifimouse.oneskyapp.com/collaboration/project?id=348615">Help us translate</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="p8">
+            <p>Copy right © Necta LLC 2018-2019,All rights reserved</p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="http://www.necta.online/js/vue.min.js"></script>
+<script src="http://www.necta.online/js/jquery1.42.min.js"></script>
+<script src="http://www.necta.online/js/jquery.SuperSlide.2.1.3.js"></script>
+<!-- <script src="https://www.youtube.com/iframe_api"></script> -->
+<script>
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '360',
+            width: '640',
+            videoId: 'FtkR0rIo6Lo',
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+        });
+    }
+
+    function onPlayerReady(event) {
+        // event.target.playVideo();
+    }
+
+    function onPlayerStateChange() {
+
+    }
+
+    var vm = new Vue({
+        el: "#body",
+        data: {
+            active: 1,
+            menuShow: false,
+            app1: false,
+            app2: false,
+            app3: false,
+            // options: {
+
+            // },
+
+
+
+        },
+        methods: {
+            clickapp1(ev){
+                this.app1 = !this.app1 ;
+                this.app2 = false;
+                this.app3 = false;
+                ev.stopPropagation();
+            },
+            clickapp2(ev){
+                this.app2 = !this.app2 ;
+                this.app1 = false;
+                this.app3 = false;
+                ev.stopPropagation();
+            },
+            clickapp3(ev){
+                this.app3 = !this.app3 ; 
+                this.app1 = false; 
+                this.app2 = false;
+                ev.stopPropagation();
+            },
+            
+           
+            showMenu() {
+                this.menuShow = !this.menuShow;
+            },
+            dieMenu() {
+                this.menuShow = false;
+            },
+            watch() {
+                document.getElementById('elastic').style.visibility = "visible";
+                document.body.style.overflow="hidden";
+                console.log('body',document.body);
+                // xiaoguo(document.getElementById('elastic'),'open','1s');  
+                try{
+                    player.playVideo();
+                }catch(e){
+                    
+                }
+               
+                // var scrollTop = document.body.scrollTop;
+                
+                // document.body.style.top = -scrollTop;
+
+                // document.body.overflow="hidden";
+                // var frame = document.getElementById("frame");
+                // frame.onload = function(){
+                //     console.log("加载完成");
+                //     console.log(document.getElementsByTagName('video'));
+                // }  
+            },
+            close() {
+                try {
+                    player.pauseVideo();
+                } catch (e) {
+
+                }
+                document.body.style.overflow="auto";
+                // document.body.style.overflow="auto";
+
+                document.getElementById('elastic').style.visibility = "hidden";
+                document.getElementById('elastic').style.animationName = "none";
+            }
+
+        },
+        mounted() {
+            jQuery(".sliderBox").slide({
+                mainCell: ".bd ul",
+                effect: "leftLoop",
+                autoPlay: true,
+                delayTime: 1000
+            });
+
+            if (isElementInViewport(document.getElementById('num'))) {
+                xiaoguo(document.getElementById('num'), 'bounce');
+            }
+            if (isElementInViewport(document.getElementById('num2'))) {
+                xiaoguo(document.getElementById('num2'), 'bounce');
+            }
+            if (isElementInViewport(document.getElementById('num3'))) {
+                xiaoguo(document.getElementById('num3'), 'bounce');
+            }
+            if (isElementInViewport(document.getElementById('animation1'))) {
+                xiaoguo(document.getElementById('animation1'), 'left');
+            }
+            if (isElementInViewport(document.getElementById('animation2'))) {
+                xiaoguo(document.getElementById('animation2'), 'show');
+            }
+            var feature = document.getElementById('feature').offsetTop;
+            var download = document.getElementById('download').offsetTop;
+            var help = document.getElementById('help').offsetTop;
+            var clientHeight = document.documentElement.clientHeight;
+            var before = document.body.scrollTop;
+            var after;
+            var delta;
+            var lastActive = 1;
+            var p3 = document.getElementsByClassName("p3")[0].offsetTop;
+            var animation1 = document.getElementById("animation1").offsetTop;
+            var animation3 = document.getElementById("animation3").offsetParent.offsetTop;
+            var animation4 = document.getElementById("download").offsetTop + document.getElementById("animation4").offsetTop;
+            // var animation3 =
+            window.onscroll = function() {
+                var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                // console.log(scrollTop);
+                if (scrollTop >= p3) {
+                    document.getElementsByClassName('imgList')[0].style.visibility = 'visible';
+                    document.getElementsByClassName('imgList')[0].style.animation = "show 1s";
+                }
+                if (scrollTop > animation1) {
+                    xiaoguo(document.getElementById("animation1"), "left");
+                }
+                if (isElementInViewport(document.getElementById('animation3'))) {
+                    xiaoguo(document.getElementById('num'), 'bounce');
+                }
+                if (isElementInViewport(document.getElementById('animation4'))) {
+                    xiaoguo(document.getElementById('num2'), 'bounce');
+                }
+                if (isElementInViewport(document.getElementById('animation5'))) {
+                    xiaoguo(document.getElementById('num3'), 'bounce');
+                }
+
+                after = scrollTop;
+                delta = after - before;
+
+                if (delta > 0) {
+                    // console.log("down");
+                    if (scrollTop < download - clientHeight) {
+                        if (lastActive != 1) {
+                            vm.active = 1;
+                            lastActive = 1;
+                            //console.log(1);
+                        }
+
+                    } else if (scrollTop >= (download - clientHeight) && scrollTop <= (help - clientHeight)) {
+                        if (lastActive != 2) {
+                            vm.active = 2;
+                            lastActive = 2;
+                            //console.log(2);
+                        }
+                    } else {
+                        if (lastActive != 3) {
+                            vm.active = 3;
+                            lastActive = 3;
+                            //console.log(3);
+                        }
+                    }
+                } else {
+                    //console.log("up");
+                    if (scrollTop + 2 <= download) {
+                        //console.log(scrollTop);
+                        //console.log(download);
+                        if (lastActive != 1) {
+                            vm.active = 1;
+                            lastActive = 1;
+                            //console.log(1);
+                        }
+                    } else if (scrollTop > download && scrollTop <= help) {
+
+                        if (lastActive != 2) {
+                            vm.active = 2;
+                            lastActive = 2;
+                            //console.log(2);
+                        }
+                    } else {
+                        if (lastActive != 3) {
+                            vm.active = 3;
+                            lastActive = 3;
+                            //console.log(3);
+                        }
+                    }
+                }
+                before = after;
+            }
+
+        }
+    })
+
+    function isElementInViewport(el) {
+        //获取元素是否在可视区域
+        // console.log(el);
+        var rect = el.getBoundingClientRect();
+        // if(rect.top<0 && rect.bottom<0){
+        //     console.log("a");
+        //     return false;
+        // }else if(rect.top>0 && rect.bottom>0){
+        //     console.log("b");
+        //     return false;
+        // }else{
+        //     consoel.log("c");
+        //     return true;
+        // }
+        if (rect.top > 0 && rect.bottom < window.innerHeight) {
+            return true;
+        } else if (rect.top < 0 && rect.bottom > 0 && rect.bottom < window.innerHeight && rect.bottom <= rect.height) {
+            return true;
+        } else if (rect.top > 0 && rect.top < window.innerHeight && rect.bottom > innerHeight) {
+            return true;
+        } else {
+            return false;
+        }
+        // return (
+        //     rect.top<0&&
+        //     rect.top >= 0 &&
+        //     rect.left >= 0 &&
+        //     rect.bottom <=
+        //     (window.innerHeight || document.documentElement.clientHeight) &&
+        //     rect.right <=
+        //     (window.innerWidth || document.documentElement.clientWidth)
+        // );
+    }
+
+    function xiaoguo(elementID, xiaoguo, time) {
+        elementID.style.visibility = 'visible';
+        if (time) {
+            elementID.style.animation = xiaoguo + " " + time;
+        } else {
+            elementID.style.animation = xiaoguo + " 2s";
+        }
+
+    }
+</script>
