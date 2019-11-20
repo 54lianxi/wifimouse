@@ -10,7 +10,8 @@
     <title>WiFi Mouse</title>
     <style>
         body::-webkit-scrollbar{
-            display: none;
+            /* width:10px; */
+            /* display: none; */
         }
         * {
             margin: 0;
@@ -1264,7 +1265,7 @@
             <img src="imgs/mode-2-08.png" class="m16" alt="">
 
         </div>
-        <div class="p4" id="download"   @click="app1 = false;app2 =false;app3 = false;">
+        <div class="p4" id="download"   >
             <img class="p4-top" src="imgs/mode-top.png" alt="">
             <img class="p4-bot" src="imgs/mode-bottom.png" alt="">
             <div class="w1100 stepList" id="animation3">
@@ -1285,20 +1286,25 @@
                                 <!-- <p class="m2 m6">Choose a download plan for your device</p> -->
                                 <div class="step_img">
                                     <div class="row2">
-                                        <div class="m21 row" @click="clickapp1">
-                                            <img style="width:24px;height:24px;" src="imgs/andriod.png" alt="">
-                                            <span>Andriod</span>
-                                        </div>
-                                        <div class="m21 row" @click="clickapp2">
-                                            <img style="width:20px; height:20px;" src="imgs/iphone.png" alt="">
-                                            <span>iPhone</span>
-                                        </div>
+                                        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.necta.wifimousefree">
+                                            <div class="m21 m21_1 row" @mouseenter="app1 = true;" @mouseleave="app1 = false;">
+                                                <img style="width:24px;height:24px;" src="imgs/andriod.png" alt="">
+                                                <span>Andriod</span>
+                                            </div>
+                                        </a>
+                                        <a target="_blank" href="https://itunes.apple.com/app/id629552573">
+                                            <div class="m21 row"  @mouseenter="app2 = true;" @mouseleave="app2 = false;">
+                                                <img style="width:20px; height:20px;" src="imgs/iphone.png" alt="">
+                                                <span>iPhone</span>
+                                            </div>
+                                        </a>
                                     </div>
-
-                                    <div class="m21 row" @click="clickapp3">
+                                     <a target="_blank" href="https://itunes.apple.com/app/id631913533">
+                                    <div class="m21 row" @mouseenter="app3 = true;" @mouseleave="app3 = false;">
                                         <img style="width:20px;height:20px;" src="imgs/ipad.png" alt="">
                                         <span>iPad</span>
                                     </div>
+                                    </a>
                                     <div class="qr qr1" v-if="app1">
                                         <img src="imgs/1.png" alt="">
                                         <div style="font-size:12px;">QR code</div>
@@ -1582,24 +1588,24 @@
 
         },
         methods: {
-            clickapp1(ev){
-                this.app1 = !this.app1 ;
-                this.app2 = false;
-                this.app3 = false;
-                ev.stopPropagation();
-            },
-            clickapp2(ev){
-                this.app2 = !this.app2 ;
-                this.app1 = false;
-                this.app3 = false;
-                ev.stopPropagation();
-            },
-            clickapp3(ev){
-                this.app3 = !this.app3 ; 
-                this.app1 = false; 
-                this.app2 = false;
-                ev.stopPropagation();
-            },
+            // clickapp1(ev){
+            //     this.app1 = !this.app1 ;
+            //     this.app2 = false;
+            //     this.app3 = false;
+            //     ev.stopPropagation();
+            // },
+            // clickapp2(ev){
+            //     this.app2 = !this.app2 ;
+            //     this.app1 = false;
+            //     this.app3 = false;
+            //     ev.stopPropagation();
+            // },
+            // clickapp3(ev){
+            //     this.app3 = !this.app3 ; 
+            //     this.app1 = false; 
+            //     this.app2 = false;
+            //     ev.stopPropagation();
+            // },
             
            
             showMenu() {
@@ -1611,7 +1617,9 @@
             watch() {
                 document.getElementById('elastic').style.visibility = "visible";
                 document.body.style.overflow="hidden";
-                console.log('body',document.body);
+                document.body.style.marginRight=this.scrollWidth+"px";
+                document.getElementsByTagName("header")[0].style.left=-this.scrollWidth/2+"px";
+                // console.log('body',document.body);
                 // xiaoguo(document.getElementById('elastic'),'open','1s');  
                 try{
                     player.playVideo();
@@ -1637,6 +1645,8 @@
 
                 }
                 document.body.style.overflow="auto";
+                document.body.style.marginRight="0";
+                document.getElementsByTagName("header")[0].style.left='0';
                 // document.body.style.overflow="auto";
 
                 document.getElementById('elastic').style.visibility = "hidden";
@@ -1667,6 +1677,7 @@
             if (isElementInViewport(document.getElementById('animation2'))) {
                 xiaoguo(document.getElementById('animation2'), 'show');
             }
+            this.scrollWidth = getScrollbarWidth();
             var feature = document.getElementById('feature').offsetTop;
             var download = document.getElementById('download').offsetTop;
             var help = document.getElementById('help').offsetTop;
@@ -1799,4 +1810,18 @@
         }
 
     }
+
+function getScrollbarWidth() {
+    var odiv = document.createElement('div'),//创建一个div
+        styles = {
+            width: '100px',
+            height: '100px',
+            overflowY: 'scroll'//让他有滚动条
+        }, i, scrollbarWidth;
+    for (i in styles) odiv.style[i] = styles[i];
+    document.body.appendChild(odiv);//把div添加到body中
+    scrollbarWidth = odiv.offsetWidth - odiv.clientWidth;//相减
+    odiv.remove();//移除创建的div
+    return scrollbarWidth;//返回滚动条宽度
+}
 </script>
